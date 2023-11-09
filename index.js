@@ -33,7 +33,7 @@
         .then(statusCheck)
         .then(resp => resp.json())
         .then(loadPokemon)
-        .catch(console.error);
+        .catch(handleError);
         
     }
 
@@ -67,6 +67,9 @@
     
     }
 
+    function handleError(e) {
+        window.alert(e);
+    }
 
     async function statusCheck(res) {
         if (!res.ok) {
